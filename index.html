@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Шифр Гронсфельда з ключем у вигляді чисел.</title>
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.zinc.min.css" rel="stylesheet"/>
+</head>
+<body class="container">
+<header>
+    <h1>Abobus</h1>
+</header>
+    <main>
+        <article>
+            <form class="grid" id="cypher-method-form">
+                <label for="cipher-method-input">
+                    Cipher method
+                    <select id="cipher-method-input" name="cipher-method" aria-label="Select a ciphering method..." required>
+                        <option disabled value="">
+                            Select a ciphering method...
+                        </option>
+                        <option selected>Italian</option>
+                        <option>Japanese</option>
+                    </select>
+                </label>
+                <label for="cipher-key-input">
+                    Cipher key
+                    <input type="number" placeholder="Enter the cipher key" id="cipher-key-input" value="12345" />
+                </label>
+                <label for="alphabet-input">
+                    Alphabet
+                    <input type="text" id="alphabet-input" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+                </label>
+            </form>
+        </article>
+        <hr>
+        <div class="grid">
+            <section>
+                <form id="cipher-form">
+                    <label for="cipher-text">
+                        Input
+                        <textarea placeholder="Enter text to cipher" id="cipher-text"></textarea>
+                    </label>
+                    <input type="button" value="Cipher">
+                </form>
+            </section>
+            <section>
+                <form id="decipher-form">
+                    <label for="decipher-text">
+                        Output
+                        <textarea placeholder="Enter text to decipher" id="decipher-text"></textarea>
+                    </label>
+                    <input type="button" value="Decipher">
+                </form>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
