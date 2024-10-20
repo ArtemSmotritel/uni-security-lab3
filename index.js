@@ -46,11 +46,12 @@ const handleCipher = (e) => {
     try {
         const method = cipherMethodInput.value;
         const cipherKey = cipherKeyInput.value;
-        const alphabet = alphabetInput.value;
-        const text = cipherTextInput.value;
+        const alphabet = alphabetInput.value.toLowerCase();
+        const text = cipherTextInput.value.toLowerCase();
         validateInputs(method, alphabet, cipherKey, text);
 
         decipherTextInput.value = cipher(method, alphabet, cipherKey, text);
+        document.getElementById(decipherTextInput.id + '-helper').innerText = 'Ciphered successfully';
     } catch (e) {
         console.log('Something went very wrong when trying to cipher the text')
         console.error(e);
@@ -64,11 +65,12 @@ const handleDecipher = (e) => {
     try {
         const method = cipherMethodInput.value;
         const cipherKey = cipherKeyInput.value;
-        const alphabet = alphabetInput.value;
-        const text = decipherTextInput.value;
+        const alphabet = alphabetInput.value.toLowerCase();
+        const text = decipherTextInput.value.toLowerCase();
         validateInputs(method, alphabet, cipherKey, text);
 
         cipherTextInput.value = decipher(method, alphabet, cipherKey, text);
+        document.getElementById(cipherTextInput.id + '-helper').innerText = 'Deciphered successfully';
     } catch (e) {
         console.log('Something went very wrong when trying to decipher the text')
         console.error(e);
