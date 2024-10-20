@@ -29,7 +29,7 @@ const handleDecipher = (e) => {
         const method = cipherMethodInput.value;
         const cipherKey = cipherKeyInput.value;
         const alphabet = alphabetInput.value;
-        const text = cipherTextInput.value;
+        const text = decipherTextInput.value;
 
         cipherTextInput.value = decipher(method, alphabet, cipherKey, text);
     } catch (e) {
