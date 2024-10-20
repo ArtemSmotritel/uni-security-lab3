@@ -9,51 +9,61 @@
 <header>
     <h1>Abobus</h1>
 </header>
-    <main>
-        <article>
-            <form class="grid" id="cypher-method-form">
-                <label for="cipher-method-input">
-                    Cipher method
-                    <select id="cipher-method-input" name="cipher-method" aria-label="Select a ciphering method..." required>
-                        <option disabled value="">
-                            Select a ciphering method...
-                        </option>
-                        <option selected>Italian</option>
-                        <option>Japanese</option>
-                    </select>
+<main>
+    <article>
+        <form class="grid" id="cypher-method-form">
+            <label for="cipher-method-input">
+                Cipher method
+                <select aria-label="Select a ciphering method..." id="cipher-method-input" name="cipher-method"
+                        required>
+                    <option disabled value="">
+                        Select a ciphering method...
+                    </option>
+                    <option selected>Italian</option>
+                    <option>Japanese</option>
+                </select>
+            </label>
+            <label for="cipher-key-input">
+                Cipher key
+                <input aria-describedby="cipher-key-input-helper" id="cipher-key-input" placeholder="Enter the cipher key" type="number"
+                       value="12345"/>
+                <small id="cipher-key-input-helper">
+                </small>
+            </label>
+            <label for="alphabet-input">
+                Alphabet
+                <input id="alphabet-input" type="text" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+                <small id="alphabet-input-helper">
+                </small>
+            </label>
+        </form>
+    </article>
+    <hr>
+    <div class="grid">
+        <section>
+            <form id="cipher-form" onsubmit="handleCipher(event)">
+                <label for="cipher-text">
+                    Input
+                    <textarea id="cipher-text" placeholder="Enter text to cipher">GRONSFELD</textarea>
+                    <small id="cipher-text-helper">
+                    </small>
                 </label>
-                <label for="cipher-key-input">
-                    Cipher key
-                    <input type="number" placeholder="Enter the cipher key" id="cipher-key-input" value="12345" />
-                </label>
-                <label for="alphabet-input">
-                    Alphabet
-                    <input type="text" id="alphabet-input" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
-                </label>
+                <input type="submit" value="Cipher">
             </form>
-        </article>
-        <hr>
-        <div class="grid">
-            <section>
-                <form onsubmit="handleCipher(event)" id="cipher-form">
-                    <label for="cipher-text">
-                        Input
-                        <textarea placeholder="Enter text to cipher" id="cipher-text">GRONSFELD</textarea>
-                    </label>
-                    <input type="submit" value="Cipher">
-                </form>
-            </section>
-            <section>
-                <form onsubmit="handleDecipher(event)" id="decipher-form">
-                    <label for="decipher-text">
-                        Output
-                        <textarea placeholder="Enter text to decipher" id="decipher-text"></textarea>
-                    </label>
-                    <input type="submit" value="Decipher">
-                </form>
-            </section>
-        </div>
-    </main>
+        </section>
+        <section>
+            <form id="decipher-form" onsubmit="handleDecipher(event)">
+                <label for="decipher-text">
+                    Output
+                    <textarea id="decipher-text" placeholder="Enter text to decipher"></textarea>
+                    <small id="decipher-text-helper">
+                    </small>
+                </label>
+                <input type="submit" value="Decipher">
+            </form>
+        </section>
+    </div>
+</main>
 </body>
 <script src="cipher.js"></script>
 <script src="index.js"></script>
