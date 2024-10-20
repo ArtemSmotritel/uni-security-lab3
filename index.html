@@ -35,24 +35,26 @@
         <hr>
         <div class="grid">
             <section>
-                <form id="cipher-form">
+                <form onsubmit="handleCipher(event)" id="cipher-form">
                     <label for="cipher-text">
                         Input
-                        <textarea placeholder="Enter text to cipher" id="cipher-text"></textarea>
+                        <textarea placeholder="Enter text to cipher" id="cipher-text">GRONSFELD</textarea>
                     </label>
-                    <input type="button" value="Cipher">
+                    <input type="submit" value="Cipher">
                 </form>
             </section>
             <section>
-                <form id="decipher-form">
+                <form onsubmit="handleDecipher(event)" id="decipher-form">
                     <label for="decipher-text">
                         Output
                         <textarea placeholder="Enter text to decipher" id="decipher-text"></textarea>
                     </label>
-                    <input type="button" value="Decipher">
+                    <input type="submit" value="Decipher">
                 </form>
             </section>
         </div>
     </main>
 </body>
+<script src="cipher.js"></script>
+<script src="index.js"></script>
 </html>
