@@ -1,4 +1,3 @@
-const cipherMethodInput = document.getElementById('cipher-method-input');
 const cipherKeyInput = document.getElementById('cipher-key-input');
 const alphabetInput = document.getElementById('alphabet-input');
 
@@ -6,7 +5,7 @@ const cipherTextInput = document.getElementById('cipher-text');
 const decipherTextInput = document.getElementById('decipher-text');
 
 const resetInputs = () => {
-    const inputs = [cipherMethodInput, cipherKeyInput, alphabetInput, cipherTextInput, decipherTextInput];
+    const inputs = [cipherKeyInput, alphabetInput, cipherTextInput, decipherTextInput];
     const ariaValid = input => input.ariaInvalid = "";
     const helperEmpty = input => {
         const helper = document.getElementById(input.id + "-helper");
@@ -44,13 +43,12 @@ const handleCipher = (e) => {
     console.log('ciphering');
 
     try {
-        const method = cipherMethodInput.value;
         const cipherKey = cipherKeyInput.value;
         const alphabet = alphabetInput.value.toLowerCase();
         const text = cipherTextInput.value.toLowerCase();
-        validateInputs(method, alphabet, cipherKey, text);
+        validateInputs('method_placeholder', alphabet, cipherKey, text);
 
-        decipherTextInput.value = cipher(method, alphabet, cipherKey, text);
+        decipherTextInput.value = cipher('method_placeholder', alphabet, cipherKey, text);
         document.getElementById(decipherTextInput.id + '-helper').innerText = 'Ciphered successfully';
     } catch (e) {
         console.log('Something went very wrong when trying to cipher the text')
@@ -63,13 +61,12 @@ const handleDecipher = (e) => {
     resetInputs();
     console.log('deciphering');
     try {
-        const method = cipherMethodInput.value;
         const cipherKey = cipherKeyInput.value;
         const alphabet = alphabetInput.value.toLowerCase();
         const text = decipherTextInput.value.toLowerCase();
-        validateInputs(method, alphabet, cipherKey, text);
+        validateInputs('method_placeholder', alphabet, cipherKey, text);
 
-        cipherTextInput.value = decipher(method, alphabet, cipherKey, text);
+        cipherTextInput.value = decipher('method_placeholder', alphabet, cipherKey, text);
         document.getElementById(cipherTextInput.id + '-helper').innerText = 'Deciphered successfully';
     } catch (e) {
         console.log('Something went very wrong when trying to decipher the text')
